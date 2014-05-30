@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: hackerati-columns_development
   pool: 5
-  username: hackerati-columns
+  username: Harold
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: hackerati-columns_test
   pool: 5
-  username: hackerati-columns
+  username: Harold
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: hackerati-columns_production
   pool: 5
-  username: hackerati-columns
+  username: Harold
   password:
