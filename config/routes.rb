@@ -1,6 +1,10 @@
 HackeratiColumns::Application.routes.draw do
 
-  resources :sentences
+  resources :sentences do
+    member do
+      put "move_to_right"
+    end
+  end
 
   root to: "sentences#index"
 

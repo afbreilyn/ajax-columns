@@ -2,9 +2,8 @@
 <html>
 <head>
   <title>HackeratiColumns</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,24 +13,3 @@
 </body>
 </html>
 
-<script>
-
-$(document).ready(function(){
-  $("li").click(function(event){
-    // console.log(event.currentTarget)
-    $.ajax({
-      success: /*console.log("meow meowm moew")*/
-        function() {
-          $(event.currentTarget).toggleClass("red")
-        }
-
-      // url:"demo_test.txt",
-      // success:function(result){
-      //   $("#div1").html(result);
-      // }
-    });
-  });
-});
-
-
-</script>

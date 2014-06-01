@@ -1,11 +1,19 @@
-<li class="sentences">
-  <%= sentence.body %>
+<li>
+  <form
+    class="move-sentence-to-right"
+    action="<%= move_to_right_sentence_url(sentence) %>"
+    method="post"
+    data-remote="true">
+
+    <input
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+    <input type="hidden" name="_method" value="put">
+
+    <button class="sentence-red">Turn Red</button>
+    <button class="sentence-unread">Turn Unred</button>
+  </form>
+
 </li>
-
-# this should be a form, which both calls a controller method 
-# and the ajax request... that should allow it to stay
-
-# maybe make both a left and a right side partial? ... possibly
-# with a way of making it not have to go through the collection twice...
-# that should be done on the rails backend.. i guess it'll have to do
-# @right_collection = ... and then just sort it

@@ -1,6 +1,6 @@
 <h1>Here are the sentences!</h1>
 
-<ul>
+<ul id="sentence-list-left">
   <%= render partial: "sentences/sentence", collection: @sentences %>
 </ul>
 
@@ -8,3 +8,18 @@
   
 </ul>
 
+
+<script>
+
+$(document).ready(function(){
+
+  var $left = $("#sentence-list-left");
+
+  $left.on("click", "form", function(event, data){
+    console.log("the data is ", data);
+  });
+
+});
+
+
+</script>

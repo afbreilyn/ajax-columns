@@ -12,8 +12,15 @@
  *= require_tree .
  */
 
+ul {
+  /*list-style: none;*/
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
 
 .red {
   color: red;
 }
-

@@ -26,10 +26,21 @@ class SentencesController < ApplicationController
     end
   end
 
+  def move_to_right
+    @sentence = Sentence.find(params[:id])
+    @sentence.toggle!(:is_left)
+
+    if request.xhr?
+      render json: @sentence
+    else
+      redirect_to sentences_url
+    end
+  end
+
   private
 
-  def person_params
-    params.require(:sentence).permit(:body)
-  end
+    def person_params
+      params.require(:sentence).permit(:body)
+    end
 
 end
