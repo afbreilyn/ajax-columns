@@ -17,7 +17,26 @@
   </section>
 </article>
 
+<section class="new-quote">
+  <form
+    action="<%= sentences_url %>"
+    method="post"
+    data-remote="true"
+    id="new-sentence">
 
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <input type="hidden" name="sentence[is_left]" value="true">
+
+  <textarea class="quote-textarea" name="sentence[body]"></textarea>
+
+  <input class="submit-quote" type="submit" value="Contribute a quote!">
+
+  </form>
+</section>
 <script>
 
 $(document).ready(function(){
@@ -25,19 +44,27 @@ $(document).ready(function(){
   var $left = $("#sentence-list-left");
   var $right = $("#sentence-list-right");
 
+  $("ul").click("li.shadow", function(event){
+    event.preventDefault();
+    var $li = $(event.target).closest("li");
+    $li.find('form').submit();
+  });
+
+  $("body").on("ajax:success", "form#new-sentence", function(event, data) {
+    event.preventDefault();
+    $left.append(data);
+    $("form#new-sentence")[0].reset();
+  });
 
   $left.on("ajax:success", "form", function(event, data){
     var $li = $(event.target).closest("li");
-    $li.hide()
-    // console.log("the data is ", data);
+    $li.hide();
     $right.append(data);
   });
 
-
   $right.on("ajax:success", "form", function(event, data){
     var $li = $(event.target).closest("li");
-    $li.hide()
-    // console.log("the data is ", data);
+    $li.hide();
     $left.append(data);
   });
 

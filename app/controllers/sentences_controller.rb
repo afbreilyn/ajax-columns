@@ -10,7 +10,7 @@ class SentencesController < ApplicationController
     @sentence.save!
 
     if request.xhr?
-      render partial: "sentences/sentence", locals: {sentence: @sentence}
+      render partial: "sentences/eachsentence", locals: {sentence: @sentence}
     else
       redirect_to sentences_url
     end
@@ -25,7 +25,7 @@ class SentencesController < ApplicationController
 
   private
 
-    def person_params
-      params.require(:sentence).permit(:body)
+    def sentence_params
+      params.require(:sentence).permit(:body, :is_left)
     end
 end
