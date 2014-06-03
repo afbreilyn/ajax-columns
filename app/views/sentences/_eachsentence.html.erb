@@ -1,4 +1,6 @@
 <li>
+  <%= sentence.body %>
+
   <form
     class="move-sentence-to-right"
     action="<%= move_to_right_sentence_url(sentence) %>"
@@ -12,8 +14,7 @@
 
     <input type="hidden" name="_method" value="put">
 
-    <button class="sentence-red">Turn Red</button>
-    <button class="sentence-unread">Turn Unred</button>
+    <button class="sentence-red">Toggle Red</button>
+    <!-- <button class="sentence-unread">Turn Unred</button> -->
   </form>
-
 </li>

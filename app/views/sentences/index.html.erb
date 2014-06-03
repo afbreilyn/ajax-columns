@@ -1,25 +1,39 @@
 <h1>Here are the sentences!</h1>
 
 <ul id="sentence-list-left">
-  <%= render partial: "sentences/sentence", collection: @sentences %>
+  <%= render partial: "sentences/left_sentence" %>
 </ul>
 
-<ul>
-  
-</ul>
+<hr>
 
+<ul id="sentence-list-right">
+  <%= render partial: "sentences/right_sentence" %>
+</ul>
 
 <script>
 
 $(document).ready(function(){
 
   var $left = $("#sentence-list-left");
+  var $right = $("#sentence-list-right");
 
-  $left.on("click", "form", function(event, data){
+
+  $left.on("ajax:success", "form", function(event, data){
+    var $li = $(event.target).closest("li");
+    // $li.toggleClass("red");
+    $li.hide()
     console.log("the data is ", data);
+    $right.append(data);    $li.addClass("is-right");
+  });
+
+
+  $right.on("ajax:success", "form", function(event, data){
+    var $li = $(event.target).closest("li");
+    $li.hide()
+    console.log("the data is ", data);
+    $left.append(data);
   });
 
 });
-
 
 </script>

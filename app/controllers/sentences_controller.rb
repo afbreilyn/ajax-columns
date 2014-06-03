@@ -16,25 +16,11 @@ class SentencesController < ApplicationController
     end
   end
 
-  def show
-    @sentence = Sentence.find(params[:id])
-
-    if request.xhr?
-      render :show, layout: false
-    else
-      render :show
-    end
-  end
-
   def move_to_right
     @sentence = Sentence.find(params[:id])
     @sentence.toggle!(:is_left)
 
-    if request.xhr?
-      render json: @sentence
-    else
-      redirect_to sentences_url
-    end
+    render partial: "sentences/eachsentence", locals: {sentence: @sentence}
   end
 
   private
@@ -42,5 +28,4 @@ class SentencesController < ApplicationController
     def person_params
       params.require(:sentence).permit(:body)
     end
-
 end

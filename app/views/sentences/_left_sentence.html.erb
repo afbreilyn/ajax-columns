@@ -1,0 +1,5 @@
+<% @sentences.each do |sentence| %>
+  <% if sentence.is_left? %>
+    <%= render partial: "sentences/eachsentence", locals: {sentence: sentence} %>
+  <% end %>
+<% end %>
