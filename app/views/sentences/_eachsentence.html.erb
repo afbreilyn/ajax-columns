@@ -1,5 +1,5 @@
 <li>
-  <%= sentence.body %>
+  
 
   <form
     class="move-sentence-to-right"
@@ -14,7 +14,7 @@
 
     <input type="hidden" name="_method" value="put">
 
-    <button class="sentence-red">Toggle Red</button>
+    <button class="sentence-red"><%= sentence.body %></button>
     <!-- <button class="sentence-unread">Turn Unred</button> -->
   </form>
 </li>

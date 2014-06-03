@@ -1,14 +1,22 @@
-<h1>Here are the sentences!</h1>
 
-<ul id="sentence-list-left">
-  <%= render partial: "sentences/left_sentence" %>
-</ul>
+<header>
+  <h1>Here are the sentences!</h1>
+</header>
 
-<hr>
+<article class="group">
+  <section class="column" id="left">
+    <ul id="sentence-list-left">
+      <%= render partial: "sentences/left_sentence" %>
+    </ul>
+  </section>
 
-<ul id="sentence-list-right">
-  <%= render partial: "sentences/right_sentence" %>
-</ul>
+  <section class="column" id="right">
+    <ul id="sentence-list-right">
+      <%= render partial: "sentences/right_sentence" %>
+    </ul>
+  </section>
+</article>
+
 
 <script>
 
@@ -20,17 +28,16 @@ $(document).ready(function(){
 
   $left.on("ajax:success", "form", function(event, data){
     var $li = $(event.target).closest("li");
-    // $li.toggleClass("red");
     $li.hide()
-    console.log("the data is ", data);
-    $right.append(data);    $li.addClass("is-right");
+    // console.log("the data is ", data);
+    $right.append(data);
   });
 
 
   $right.on("ajax:success", "form", function(event, data){
     var $li = $(event.target).closest("li");
     $li.hide()
-    console.log("the data is ", data);
+    // console.log("the data is ", data);
     $left.append(data);
   });
 

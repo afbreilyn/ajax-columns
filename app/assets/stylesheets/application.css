@@ -12,8 +12,65 @@
  *= require_tree .
  */
 
+/* --- reset all of the things -- */
+
+body, header, h1, ul, li, a, form, 
+button, article, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* --- CLEAR FIX --- */
+
+.group:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* --- elements --- */
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: normal;
+  width: 1000px;
+  margin: auto;
+}
+
+header {
+  height: 100px;
+  background: #325050;
+  color: #fff;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+article {
+  float: right;
+}
+
+section.column {
+  width: 450px;
+  border: 5px solid #325050;
+  margin: 15px 21px;
+  float: left;
+  background: rgba(138, 188, 159, 0.5);
+}
+
+section.column#right {
+  text-align: right;
+}
+
 ul {
-  /*list-style: none;*/
+  list-style: none;
 }
 
 a {
@@ -21,6 +78,8 @@ a {
   color: black;
 }
 
-.red {
-  color: red;
+button {
+  background: none;
 }
+
+
