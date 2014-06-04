@@ -13,4 +13,34 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-	
+
+$(document).ready(function(){
+
+  var $left = $("#sentence-list-left");
+  var $right = $("#sentence-list-right");
+
+  $("ul").click("li.shadow", function(event){
+    event.preventDefault();
+    var $li = $(event.target).closest("li");
+    $li.find('form').submit();
+  });
+
+  $("body").on("ajax:success", "form#new-sentence", function(event, data) {
+    event.preventDefault();
+    $left.append(data);
+    $("form#new-sentence")[0].reset();
+  });
+
+  $left.on("ajax:success", "form", function(event, data){
+    var $li = $(event.target).closest("li");
+    $li.hide();
+    $right.append(data);
+  });
+
+  $right.on("ajax:success", "form", function(event, data){
+    var $li = $(event.target).closest("li");
+    $li.hide();
+    $left.append(data);
+  });
+
+});
