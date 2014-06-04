@@ -13,4 +13,4 @@ Sentence.create!({ body: "\"[My desire is to] stir up, through the production of
 Sentence.create!({ body: "\"You can either practice being right or practice being kind\" - Anne Lamott", is_left: true })
 Sentence.create!({ body: "\"I think... I feel good about it.\" - Marvin", is_left: true })
 Sentence.create!({ body: "\"A concept is a brick. It can be used to build a courthouse of reason. Or it can be thrown through the window.\" - Gilles Deleuze and Félix Guattari", is_left: true })
-Sentence.create!({ body: "\"Valar morghulis, valar dohaeris\" - the Faceless Men", is_left: true })
+Sentence.create!({ body: "\"Prem se bhiksha dijiye. (What you give, with love I accept.)\" - David James Duncan", is_left: true })
