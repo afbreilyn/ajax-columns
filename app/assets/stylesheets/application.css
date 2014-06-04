@@ -113,16 +113,17 @@ button:active {
 }
 
 section.new-quote {
-  margin: 0 275px;
-  width: 370px;
+  margin: 25px 165px;
+  width: 570px;
   overflow: auto;
+
 }
 
 textarea {
   -webkit-appearance: none;
   box-sizing: content-box;
   border: 5px solid #18d;
-  width: 340px;
+  width: 540px;
   height: 100px;
   padding: 8px 10px;
   resize: none; 

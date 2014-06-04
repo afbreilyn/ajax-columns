@@ -4,20 +4,6 @@
   <h2>Click on a quote to move it to the other column.</h2>
 </header>
 
-<article class="group">
-  <section class="column" id="left">
-    <ul id="sentence-list-left">
-      <%= render partial: "sentences/left_sentence" %>
-    </ul>
-  </section>
-
-  <section class="column" id="right">
-    <ul id="sentence-list-right">
-      <%= render partial: "sentences/right_sentence" %>
-    </ul>
-  </section>
-</article>
-
 <section class="new-quote">
   <form
     action="<%= sentences_url %>"
@@ -38,3 +24,19 @@
 
   </form>
 </section>
+
+<article class="group">
+  <section class="column" id="left">
+    <ul id="sentence-list-left">
+      <%= render partial: "sentences/left_sentence" %>
+    </ul>
+  </section>
+
+  <section class="column" id="right">
+    <ul id="sentence-list-right">
+      <%= render partial: "sentences/right_sentence" %>
+    </ul>
+  </section>
+</article>
+
+
